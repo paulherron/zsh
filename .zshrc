@@ -9,6 +9,8 @@ source ~/.zsh/.zshrc.local
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git brew vi-mode)
 
+export PATH=~/bin:/usr/local/sbin:/usr/local/bin:$PATH
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
