@@ -60,18 +60,6 @@ alias uuuu="cd ../../../.."
 alias D="cd ~/Desktop"
 alias P="cd ~/Projects"
 
-# Shortcuts to various project directories
-alias _aa="cd ~/Projects/angryarchi/site"
-alias _cs="cd ~/Projects/cookseystudio/site"
-alias _nk="cd ~/Projects/notekick/site"
-alias _nka="cd ~/Projects/notekick-admin"
-alias _ph="cd ~/Projects/paulherron/site"
-alias _pha="cd ~/Projects/paulherron-admin"
-alias _pm="cd ~/Projects/proceptmedical/site"
-alias _ss="cd ~/Projects/showstudio/site"
-alias _ssa="cd ~/Projects/showstudio-admin"
-alias _sswl="cd ~/Projects/supersimpleweightlog/site"
-
 alias _vim="cd ~/.vim"
 alias _bash="cd ~/.bash"
 alias _zsh="cd ~/.zsh"
@@ -86,17 +74,12 @@ alias -g ..2='../..'
 autoload -Uz compinit
 compinit
 
-PROMPT="%m:%c %{$fg[green]%}%n%{$fg[blue]%} %T%{$fg[black]%} $ "
+PROMPT="$HOST_COLOR%m%{$fg[black]%}:%c %{$fg[green]%}%n%{$fg[blue]%} %T%{$fg[black]%} $ "
 
 export AUTOSSH_PORT=0
 export AUTOSSH_GATETIME=0
 #export AUTOSSH_DEBUG=1
 
 t() {
-	# Update the window title with the tmux session.
-	DISABLE_AUTO_TITLE="true"
-	echo -ne "\e]1;tmux $@\a"
-	DISABLE_AUTO_TITLE="false"
-
 	autossh -t "$@" 'tmux attach || tmux new'
 }
