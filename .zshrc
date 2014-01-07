@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+ZSH=$HOME/.zsh/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -19,45 +19,63 @@ export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
 export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
 export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 
-alias zr="vim ~/.bashrc"
-alias szr="source ~/.bashrc"
-alias st="speedtest-cli"
+alias zr="vim ~/.zshrc"
+alias szr="source ~/.zshrc"
+alias stc="speedtest-cli"
+alias sc="vim ~/.ssh/config"
+alias tc="vim ~/.tmux.conf"
 
 alias page="lynx -dump -nolist -notitle -width 2000"
 
 # git aliases
 alias b="git branch"
-alias s="git status"
 alias c="git commit"
 alias ca="git commit -a -m"
+alias d="git --no-pager diff"
 alias fmc="git commit -a -m 'Fix merge conflict.'"
+alias gc="git clone"
+alias l="git --no-pager log -n 8"
+alias m="git checkout master"
 alias p="git pull"
 alias pp="git push"
-alias l="git log -n 8"
-alias m="git checkout master"
-alias d="git diff"
-alias gc="git clone"
+alias ppo="git push origin master"
+alias s="git status"
+
+# Vagrant aliases
+alias v="vagrant"
+alias vd="vagrant destroy"
+alias vh="vagrant halt"
+alias vr="vagrant reload"
+alias vs="vagrant suspend"
+alias vu="vagrant up"
+
+alias ll="ls -l"
+alias pc="pngcrush -ow"
 
 alias u="cd .."
-alias u2="cd ../.."
-alias u3="cd ../../.."
-alias u4="cd ../../../.."
+alias uu="cd ../.."
+alias uuu="cd ../../.."
+alias uuuu="cd ../../../.."
 
 alias D="cd ~/Desktop"
 alias P="cd ~/Projects"
 
 # Shortcuts to various project directories
-alias _ph="cd ~/Projects/paulherron/site"
-alias _pha="cd ~/Projects/paulherron-admin"
+alias _aa="cd ~/Projects/angryarchi/site"
+alias _cs="cd ~/Projects/cookseystudio/site"
 alias _nk="cd ~/Projects/notekick/site"
 alias _nka="cd ~/Projects/notekick-admin"
+alias _ph="cd ~/Projects/paulherron/site"
+alias _pha="cd ~/Projects/paulherron-admin"
+alias _pm="cd ~/Projects/proceptmedical/site"
 alias _ss="cd ~/Projects/showstudio/site"
 alias _ssa="cd ~/Projects/showstudio-admin"
-alias _pm="cd ~/Projects/proceptmedical/site"
-alias _cs="cd ~/Projects/cookseystudio/site"
 alias _sswl="cd ~/Projects/supersimpleweightlog/site"
+
 alias _vim="cd ~/.vim"
+alias _bash="cd ~/.bash"
 alias _zsh="cd ~/.zsh"
+alias _tmux="cd ~/.tmux"
 
 alias mvim='open -a MacVim'
 
@@ -74,3 +92,16 @@ autoload -Uz compinit
 compinit
 
 PROMPT="%m:%c %{$fg[green]%}%n%{$fg[blue]%} %T%{$fg[black]%} $ "
+
+export AUTOSSH_PORT=0
+export AUTOSSH_GATETIME=0
+#export AUTOSSH_DEBUG=1
+
+t() {
+	# Update the window title with the tmux session.
+	DISABLE_AUTO_TITLE="true"
+	echo -ne "\e]1;tmux $@\a"
+	DISABLE_AUTO_TITLE="false"
+
+	autossh -t "$@" 'tmux attach || tmux new'
+}
