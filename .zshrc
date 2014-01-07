@@ -1,6 +1,8 @@
-# Path to your oh-my-zsh configuration.
+# Path to oh-my-zsh
 ZSH=$HOME/.zsh/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
+source ~/.zsh/.zshrc.local
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -11,13 +13,6 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory extendedglob correctall
-
-export PATH=~/bin:/usr/local/sbin:/usr/local/bin:/Applications/android-sdk-macosx/tools:~/Projects/others/cake/cake/console:/Applications/GitX.app/:$PATH
-
-export JAVA_HOME="$(/usr/libexec/java_home)"
-export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
-export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
-export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 
 alias zr="vim ~/.zshrc"
 alias szr="source ~/.zshrc"
@@ -77,11 +72,6 @@ alias _bash="cd ~/.bash"
 alias _zsh="cd ~/.zsh"
 alias _tmux="cd ~/.tmux"
 
-alias mvim='open -a MacVim'
-
-alias showstudio_database="rsync showstudio@dev.showstudio.com:/mnt/briefcase/backup/daily.0/trousers/mnt/rucksack/backup/database/`date \+\%Y-\%m-\%d`* ~/Backup/trousers/database"
-alias cummerbund_update="rsync -av --delete showstudio@dev.showstudio.com:/mnt/briefcase/backup/daily.0/trousers/mnt/rucksack/showstudio/webroot /Volumes/cummerbund/Projects/showstudio/site/"
-alias move_screenshots="mv ~/Desktop/Screen\ Shot* ~/Documents/screenshots/"
 alias gfm="marked --gfm"
 
 alias -g L='| less'
