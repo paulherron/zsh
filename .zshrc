@@ -20,6 +20,7 @@ SAVEHIST=1000
 setopt appendhistory extendedglob correctall
 
 alias zr="vim ~/.zshrc"
+alias zrl="vim ~/.zsh/.zshrc.local"
 alias szr="source ~/.zshrc"
 alias stc="speedtest-cli"
 alias sc="vim ~/.ssh/config"
@@ -74,7 +75,7 @@ alias -g ..2='../..'
 autoload -Uz compinit
 compinit
 
-PROMPT="$HOST_COLOR%m%{$fg[black]%}:%c %{$fg[green]%}%n%{$fg[blue]%} %T%{$fg[black]%} $ "
+PROMPT="$host_color%m%{$fg[black]%}:%c %{$fg[green]%}%n%{$fg[blue]%} %T%{$fg[black]%} $ "
 
 export AUTOSSH_PORT=0
 export AUTOSSH_GATETIME=0
