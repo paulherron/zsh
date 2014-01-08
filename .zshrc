@@ -75,7 +75,7 @@ alias -g ..2='../..'
 autoload -Uz compinit
 compinit
 
-PROMPT="$host_color%m%{$fg[black]%}:%c %{$fg[green]%}%n%{$fg[blue]%} %T%{$fg[black]%} $ "
+PROMPT="$host_color%m%{$fg[black]%}:%c %{$fg[green]%}%n%{$fg[blue]%} %T%{$reset_color%} $ "
 
 export AUTOSSH_PORT=0
 export AUTOSSH_GATETIME=0
