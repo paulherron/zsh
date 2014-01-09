@@ -51,6 +51,7 @@ alias vs="vagrant suspend"
 alias vu="vagrant up"
 
 alias ll="ls -l"
+alias k="killall"
 alias pc="pngcrush -ow"
 
 alias u="cd .."
