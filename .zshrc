@@ -43,7 +43,6 @@ alias ppo="git push origin master"
 alias s="git status"
 
 # Vagrant aliases
-alias v="vagrant"
 alias vd="vagrant destroy"
 alias vh="vagrant halt"
 alias vr="vagrant reload"
@@ -82,6 +81,20 @@ export AUTOSSH_PORT=0
 export AUTOSSH_GATETIME=0
 #export AUTOSSH_DEBUG=1
 
+# Shortcut command for launching a resilient SSH session using autossh and tmux.
 t() {
 	autossh -t "$@" 'tmux attach || tmux new'
+}
+
+# Shortcut command for `vagrant`, with a tweak to use the above `t` function when connecting via SSH.
+v() {
+	if [[ $1 == "ssh" ]]; then
+		# Hijack the `v ssh` command to use t() function, i.e. using autossh and tmux.
+		config="/tmp/vagrant_ssh_config"
+		vagrant ssh-config > $config
+		t -F $config default
+	else
+		# Pass everything else through to the `vagrant` command.
+		vagrant "$@"
+	fi
 }
