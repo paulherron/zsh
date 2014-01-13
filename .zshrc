@@ -78,7 +78,6 @@ PROMPT="$host_color%m%{$reset_color%}:%c %{$fg[green]%}%n%{$fg[blue]%} %T%{$rese
 
 export AUTOSSH_PORT=0
 export AUTOSSH_GATETIME=0
-export AUTOSSH_DEBUG=0
 
 # Shortcut command for launching a resilient SSH session using autossh and tmux.
 t() {
