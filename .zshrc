@@ -2,6 +2,8 @@
 ZSH=$HOME/.zsh/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+# Use a file called .zshrc.local if present, to allow this machine to have its own overrides.
+# ~/.zsh/.zshrc.local should be ignored in version control.
 LOCAL_ZSHRC=~/.zsh/.zshrc.local
 if [[ -f $LOCAL_ZSHRC ]]; then
 	source $LOCAL_ZSHRC
@@ -19,6 +21,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory extendedglob correctall
 
+# Aliases for quick editing of config files.
 alias zr="vim ~/.zshrc"
 alias zrl="vim ~/.zsh/.zshrc.local"
 alias szr="source ~/.zshrc"
@@ -26,7 +29,10 @@ alias stc="speedtest-cli"
 alias sc="vim ~/.ssh/config"
 alias tc="vim ~/.tmux.conf"
 
-alias page="lynx -dump -nolist -notitle -width 2000"
+alias _vim="cd ~/.vim"
+alias _bash="cd ~/.bash"
+alias _zsh="cd ~/.zsh"
+alias _tmux="cd ~/.tmux"
 
 # git aliases
 alias b="git branch"
@@ -58,19 +64,12 @@ alias uu="cd ../.."
 alias uuu="cd ../../.."
 alias uuuu="cd ../../../.."
 
-alias D="cd ~/Desktop"
-alias P="cd ~/Projects"
-
-alias _vim="cd ~/.vim"
-alias _bash="cd ~/.bash"
-alias _zsh="cd ~/.zsh"
-alias _tmux="cd ~/.tmux"
-
-alias gfm="marked --gfm"
-
 alias -g L='| less'
 alias -g G='| grep'
 alias -g ..2='../..'
+
+alias gfm="marked --gfm"
+alias page="lynx -dump -nolist -notitle -width 2000"
 
 autoload -Uz compinit
 compinit
@@ -79,7 +78,7 @@ PROMPT="$host_color%m%{$reset_color%}:%c %{$fg[green]%}%n%{$fg[blue]%} %T%{$rese
 
 export AUTOSSH_PORT=0
 export AUTOSSH_GATETIME=0
-#export AUTOSSH_DEBUG=1
+export AUTOSSH_DEBUG=0
 
 # Shortcut command for launching a resilient SSH session using autossh and tmux.
 t() {
