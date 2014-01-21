@@ -47,6 +47,7 @@ alias p="git pull"
 alias pp="git push"
 alias ppo="git push origin master"
 alias s="git status"
+alias gk="gitk&"
 
 # Vagrant aliases
 alias vd="vagrant destroy"
@@ -67,6 +68,7 @@ alias uuuu="cd ../../../.."
 alias -g L='| less'
 alias -g G='| grep'
 alias -g ..2='../..'
+alias -g T="| tail"
 
 alias gfm="marked --gfm"
 alias page="lynx -dump -nolist -notitle -width 2000"
