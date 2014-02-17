@@ -19,7 +19,7 @@ export PATH=~/bin:/usr/local/sbin:/usr/local/bin:$PATH
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt appendhistory extendedglob correctall
+setopt appendhistory extendedglob
 
 # Aliases for quick editing of config files.
 alias zr="vim ~/.zshrc"
@@ -49,6 +49,9 @@ alias ppo="git push origin master"
 alias s="git status"
 alias gk="gitk&"
 
+# CakePHP aliases
+alias ccc="cake clear_cache"
+
 # Vagrant aliases
 alias vd="vagrant destroy"
 alias vh="vagrant halt"
@@ -56,6 +59,7 @@ alias vr="vagrant reload"
 alias vs="vagrant suspend"
 alias vu="vagrant up"
 
+alias j="jekyll serve -w"
 alias ll="ls -l"
 alias k="killall"
 alias pc="pngcrush -ow"
