@@ -1,6 +1,4 @@
-# Path to oh-my-zsh
-ZSH=$HOME/.zsh/oh-my-zsh
-source $ZSH/oh-my-zsh.sh
+autoload colors; colors
 
 # Use a file called .zshrc.local if present, to allow this machine to have its own overrides.
 # ~/.zsh/.zshrc.local should be ignored in version control.
@@ -10,17 +8,11 @@ if [[ -f $LOCAL_ZSHRC ]]; then
 fi
 
 source ~/.profile
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew vi-mode)
-
 export PATH=~/bin:/usr/local/sbin:/usr/local/bin:$PATH
 
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+#HISTSIZE=1000
+#SAVEHIST=1000
 setopt appendhistory extendedglob
 
 # Aliases for quick editing of config files.
