@@ -8,6 +8,10 @@ if [[ -f $LOCAL_ZSHRC ]]; then
 fi
 
 source ~/.profile
+source ~/.zsh/termsupport.zsh
+source ~/.zsh/completion.zsh
+source ~/.zsh/correction.zsh
+
 export PATH=~/bin:/usr/local/sbin:/usr/local/bin:$PATH
 
 HISTFILE=~/.histfile
@@ -57,6 +61,7 @@ alias j="jekyll serve -w"
 alias ll="ls -l"
 alias k="killall"
 alias pc="pngcrush -ow"
+alias x="clear"
 
 alias u="cd .."
 alias uu="cd ../.."
