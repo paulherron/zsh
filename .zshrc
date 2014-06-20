@@ -8,16 +8,16 @@ if [[ -f $LOCAL_ZSHRC ]]; then
 fi
 
 source ~/.profile
-source ~/.zsh/termsupport.zsh
 source ~/.zsh/completion.zsh
-source ~/.zsh/correction.zsh
+source ~/.zsh/termsupport.zsh
 
 export PATH=~/bin:/usr/local/sbin:/usr/local/bin:$PATH
 
 HISTFILE=~/.histfile
-#HISTSIZE=1000
-#SAVEHIST=1000
-setopt appendhistory extendedglob
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory extendedglob bang_hist auto_menu
+unsetopt NOMATCH
 
 # Aliases for quick editing of config files.
 alias zr="vim ~/.zshrc"
@@ -36,15 +36,18 @@ alias _tmux="cd ~/.tmux"
 alias b="git branch"
 alias c="git commit"
 alias ca="git commit -a -m"
+alias co="git checkout"
 alias d="git --no-pager diff"
 alias fmc="git commit -a -m 'Fix merge conflict.'"
 alias gc="git clone"
 alias l="git --no-pager log -n 8"
-alias m="git checkout master"
+alias m="git merge"
+alias mn="git merge --no-ff"
 alias p="git pull"
 alias pp="git push"
 alias ppo="git push origin master"
 alias s="git status"
+alias ss="git status -sb"
 alias gk="gitk&"
 
 # CakePHP aliases
@@ -57,7 +60,7 @@ alias vr="vagrant reload"
 alias vs="vagrant suspend"
 alias vu="vagrant up"
 
-alias j="jekyll serve -w"
+alias J="jekyll serve -w"
 alias ll="ls -l"
 alias k="killall"
 alias pc="pngcrush -ow"
@@ -102,4 +105,7 @@ v() {
 	fi
 }
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+#bindkey "^[[A" history-beginning-search-backward
+#bindkey "^[[B" history-beginning-search-forward
