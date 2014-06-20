@@ -16,7 +16,7 @@ export PATH=~/bin:/usr/local/sbin:/usr/local/bin:$PATH
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt appendhistory extendedglob bang_hist auto_menu
+setopt appendhistory extendedglob
 unsetopt NOMATCH
 
 # Aliases for quick editing of config files.
@@ -27,15 +27,16 @@ alias stc="speedtest-cli"
 alias sc="vim ~/.ssh/config"
 alias tc="vim ~/.tmux.conf"
 
-alias _vim="cd ~/.vim"
-alias _bash="cd ~/.bash"
-alias _zsh="cd ~/.zsh"
-alias _tmux="cd ~/.tmux"
+alias .vim="cd ~/.vim"
+alias .bash="cd ~/.bash"
+alias .zsh="cd ~/.zsh"
+alias .tmux="cd ~/.tmux"
 
 # git aliases
 alias b="git branch"
 alias c="git commit"
 alias ca="git commit -a -m"
+alias cl="git clone"
 alias co="git checkout"
 alias d="git --no-pager diff"
 alias fmc="git commit -a -m 'Fix merge conflict.'"
@@ -53,14 +54,6 @@ alias gk="gitk&"
 # CakePHP aliases
 alias ccc="cake clear_cache"
 
-# Vagrant aliases
-alias vd="vagrant destroy"
-alias vh="vagrant halt"
-alias vr="vagrant reload"
-alias vs="vagrant suspend"
-alias vu="vagrant up"
-
-alias J="jekyll serve -w"
 alias ll="ls -l"
 alias k="killall"
 alias pc="pngcrush -ow"
@@ -83,29 +76,3 @@ autoload -Uz compinit
 compinit
 
 PROMPT="$host_color%m%{$reset_color%}:%c %{$fg[green]%}%n%{$fg[blue]%} %T%{$reset_color%} $ "
-
-export AUTOSSH_PORT=0
-export AUTOSSH_GATETIME=0
-
-# Shortcut command for launching a resilient SSH session using autossh and tmux.
-t() {
-	autossh -t "$@" 'tmux attach || tmux new'
-}
-
-# Shortcut command for `vagrant`, with a tweak to use the above `t` function when connecting via SSH.
-v() {
-	if [[ $1 == "ssh" ]]; then
-		# Hijack the `v ssh` command to use t() function, i.e. using autossh and tmux.
-		config="/tmp/vagrant_ssh_config"
-		vagrant ssh-config > $config
-		t -F $config default
-	else
-		# Pass everything else through to the `vagrant` command.
-		vagrant "$@"
-	fi
-}
-
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-#bindkey "^[[A" history-beginning-search-backward
-#bindkey "^[[B" history-beginning-search-forward
