@@ -11,6 +11,8 @@ source ~/.profile
 source ~/.zsh/completion.zsh
 source ~/.zsh/termsupport.zsh
 
+bindkey -e
+
 export PATH=~/bin:/usr/local/sbin:/usr/local/bin:/Users/paulherron/.rvm/gems/ruby-2.1.1/gems/sass-3.2.19/bin:/Users/paulherron/.rvm/gems/ruby-2.1.1/gems/compass-0.12.6/bin:/usr/local/Cellar/ruby/2.1.1/bin:$PATH
 # /usr/local/lib/ruby/gems/2.1.0/gems/rumember-1.0.1/bin:
 
