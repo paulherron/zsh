@@ -74,6 +74,9 @@ alias uu="cd ../.."
 alias uuu="cd ../../.."
 alias uuuu="cd ../../../.."
 
+alias P="pass show"
+alias Pe="pass edit"
+
 #alias -g L='| less'
 #alias -g G='| grep'
 #alias -g ..2='../..'
