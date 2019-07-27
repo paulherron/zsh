@@ -92,4 +92,52 @@ alias page="lynx -dump -nolist -notitle -width 2000"
 autoload -Uz compinit
 compinit
 
+# Shortcuts to various project directories
+alias .a="cd ~/Projects/capitalise/platfi-api-platform"
+alias .aa="cd ~/Projects/angryarchi/site"
+alias .cti="cd ~/Projects/const/site"
+alias .cd="cd ~/Projects/cadogan/site"
+alias .bs="cd ~/Projects/backup-spotify-playlists/site"
+alias .c="cd ~/Projects/capitalise/platfi"
+alias .u="cd ~/Projects/capitalise/platfi-ui-app"
+alias .q="cd ~/Projects/capitalise/platfi-ui-questionnaire"
+alias .cs="cd ~/Projects/cookseystudio/site"
+alias .e="cd ~/Projects/capitalise/platfi-service-event-broker"
+alias .ecs="cd ~/Projects/ecs/magento-pos"
+alias .fr="cd ~/Projects/forevr/forevr_backend"
+alias .kb="cd ~/Projects/keywordbookmarks/site"
+alias .hp="cd ~/Projects/headphones/site"
+alias .hh="cd ~/Projects/haygarth/site"
+alias .h="cd ~/Projects/house/site"
+alias .nk="cd ~/Projects/notekick/site"
+alias .nka="cd ~/Projects/notekick-admin"
+alias .ph="cd ~/Projects/paulherron/site"
+alias .mb="cd ~/Projects/mbaco/site"
+alias .mbo="cd ~/Projects/mbaco/site_old"
+alias .o="cd ~/Projects/capitalise/platfi-service-offer-manager"
+alias .rn="cd ~/Projects/racketsportsnetwork/site"
+alias .p="cd ~/Projects/capitalise/platfi"
+alias .pha="cd ~/Projects/paulherron-admin"
+alias .pm="cd ~/Projects/proceptmedical/site"
+alias .ps="cd ~/Projects/paulandseema/site"
+alias .ss="cd ~/Projects/showstudio/site"
+alias .s="cd ~/Projects/wirelesslogic/simpro"
+alias .ct="cd ~/Projects/cakephp_test/site"
+alias .ssa="cd ~/Projects/showstudio-admin"
+alias .sswl="cd ~/Projects/supersimpleweightlog/site"
+alias .sc="cd ~/Projects/soleilcapestang/site"
+alias .tv="cd ~/Projects/theventure/site"
+alias .t="cd ~/Projects/capitalise/platfi-service-activity-timeline"
+alias .cr="cd ~/Projects/carlsonrezidor/site"
+alias .yo="cd ~/Projects/yoo/site"
+
+# Shortcut command for launching a resilient SSH session using autossh and tmux.
+t() {
+	autossh -t "$@" 'tmux attach || tmux new'
+}
+
+function ocr() {
+	convert $1 -resize 400% -type Grayscale /private/tmp/ocr_input.tif && tesseract -l eng /private/tmp/ocr_input.tif stdout
+}
+
 PROMPT="$host_color%m%{$reset_color%}:%c %{$fg[green]%}%n%{$fg[blue]%} %T%{$reset_color%} $ "
