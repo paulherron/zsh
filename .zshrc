@@ -12,8 +12,12 @@ source ~/.zsh/completion.zsh
 source ~/.zsh/termsupport.zsh
 
 bindkey -e
+#bindkey -v
+#export KEYTIMEOUT=1
 
-export PATH=~/bin:/usr/local/sbin:/usr/local/bin:/Users/paulherron/.rvm/gems/ruby-2.1.1/gems/sass-3.2.19/bin:/Users/paulherron/.rvm/gems/ruby-2.1.1/gems/compass-0.12.6/bin:/usr/local/Cellar/ruby/2.1.1/bin:$PATH
+#export PATH=$(brew --prefix homebrew/php/php70)/bin:~/bin:/usr/local/sbin:/usr/local/bin:/Users/paulherron/.rvm/gems/ruby-2.1.1/gems/sass-3.2.19/bin:/Users/paulherron/.rvm/gems/ruby-2.1.1/gems/compass-0.12.6/bin:/usr/local/Cellar/ruby/2.1.1/bin:$PATH
+#export PATH=/usr/local/opt/php@7.1/bin:$(brew --prefix homebrew/php/php70)/bin:~/bin:~/bin/captured/bin:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=/usr/local/opt/php@7.1/bin:~/bin:~/bin/captured/bin:/usr/local/sbin:/usr/local/bin:$PATH
 # /usr/local/lib/ruby/gems/2.1.0/gems/rumember-1.0.1/bin:
 
 HISTFILE=~/.histfile
@@ -50,16 +54,18 @@ alias m="git merge"
 alias mn="git merge --no-ff"
 alias p="git pull"
 alias pp="git push"
-alias ppo="git push origin master"
+alias ppo="git push --set-upstream origin"
 alias s="git status"
 alias ss="git status -sb"
 alias gk="gitk&"
+
+#alias gpga="eval $(gpg-agent --daemon)"
 
 # CakePHP aliases
 alias ccc="cake clear_cache"
 
 alias ll="ls -l"
-alias k="killall"
+alias k="kubectl"
 alias pc="pngcrush -ow"
 alias x="clear"
 
@@ -68,10 +74,17 @@ alias uu="cd ../.."
 alias uuu="cd ../../.."
 alias uuuu="cd ../../../.."
 
-alias -g L='| less'
-alias -g G='| grep'
-alias -g ..2='../..'
-alias -g T="| tail"
+#alias -g L='| less'
+#alias -g G='| grep'
+#alias -g ..2='../..'
+#alias -g T="| tail"
+#alias -g J='| jsonlint -t "    "'
+#alias -g B='| browser'
+
+kn="kubectl config set-context $(kubectl config current-context) --namespace"
+ke() {
+	kubectl -n $kubeNamespace exec -it $1 -- bash
+}
 
 alias gfm="marked --gfm"
 alias page="lynx -dump -nolist -notitle -width 2000"
