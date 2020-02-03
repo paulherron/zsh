@@ -39,6 +39,8 @@ alias .bash="cd ~/.bash"
 alias .zsh="cd ~/.zsh"
 alias .tmux="cd ~/.tmux"
 
+alias copy="xsel -ib"
+
 # git aliases
 alias b="git branch"
 alias rb="git for-each-ref --count=16 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
