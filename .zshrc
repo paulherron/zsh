@@ -17,7 +17,7 @@ bindkey -e
 
 #export PATH=$(brew --prefix homebrew/php/php70)/bin:~/bin:/usr/local/sbin:/usr/local/bin:/Users/paulherron/.rvm/gems/ruby-2.1.1/gems/sass-3.2.19/bin:/Users/paulherron/.rvm/gems/ruby-2.1.1/gems/compass-0.12.6/bin:/usr/local/Cellar/ruby/2.1.1/bin:$PATH
 #export PATH=/usr/local/opt/php@7.1/bin:$(brew --prefix homebrew/php/php70)/bin:~/bin:~/bin/captured/bin:/usr/local/sbin:/usr/local/bin:$PATH
-export PATH=/usr/local/opt/php@7.1/bin:~/bin:~/bin/captured/bin:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=/usr/local/opt/php@7.4/bin:~/bin:~/bin/captured/bin:/usr/local/sbin:/usr/local/bin:$PATH
 # /usr/local/lib/ruby/gems/2.1.0/gems/rumember-1.0.1/bin:
 
 HISTFILE=~/.histfile
