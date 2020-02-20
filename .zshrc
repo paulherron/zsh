@@ -15,11 +15,6 @@ bindkey -e
 #bindkey -v
 #export KEYTIMEOUT=1
 
-#export PATH=$(brew --prefix homebrew/php/php70)/bin:~/bin:/usr/local/sbin:/usr/local/bin:/Users/paulherron/.rvm/gems/ruby-2.1.1/gems/sass-3.2.19/bin:/Users/paulherron/.rvm/gems/ruby-2.1.1/gems/compass-0.12.6/bin:/usr/local/Cellar/ruby/2.1.1/bin:$PATH
-#export PATH=/usr/local/opt/php@7.1/bin:$(brew --prefix homebrew/php/php70)/bin:~/bin:~/bin/captured/bin:/usr/local/sbin:/usr/local/bin:$PATH
-export PATH=/usr/local/opt/php@7.4/bin:~/bin:~/bin/captured/bin:/usr/local/sbin:/usr/local/bin:$PATH
-# /usr/local/lib/ruby/gems/2.1.0/gems/rumember-1.0.1/bin:
-
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
@@ -92,7 +87,7 @@ alias Pe="pass edit"
 #alias -g J='| jsonlint -t "    "'
 #alias -g B='| browser'
 
-alias kn="kubectl config set-context $(kubectl config current-context) --namespace"
+#kn="kubectl config set-context $(kubectl config current-context) --namespace"
 ke() {
 	kubectl -n $kubeNamespace exec -it $1 -- bash
 }
@@ -117,6 +112,7 @@ alias .pla="cd ~/Projects/capitalise/platfi-api-platform"
 alias .pro="cd ~/Projects/capitalise/platfi-api-products"
 alias .tim="cd ~/Projects/capitalise/platfi-service-activity-timeline"
 alias .cs="cd ~/Projects/cookseystudio/site"
+alias .d="cd ~/Projects/drilldown/app"
 alias .e="cd ~/Projects/capitalise/platfi-service-event-broker"
 alias .ecs="cd ~/Projects/ecs/magento-pos"
 alias .fr="cd ~/Projects/forevr/forevr_backend"
