@@ -35,6 +35,7 @@ alias .vim="cd ~/.vim"
 alias .bash="cd ~/.bash"
 alias .zsh="cd ~/.zsh"
 alias .tmux="cd ~/.tmux"
+alias .bin="cd ~/bin"
 
 alias copy="xsel -ib"
 
