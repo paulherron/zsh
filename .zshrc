@@ -15,8 +15,6 @@ bindkey -e
 #bindkey -v
 #export KEYTIMEOUT=1
 
-export PATH=/usr/local/opt/php@7.1/bin:~/bin:~/bin/captured/bin:/usr/local/sbin:/usr/local/bin:$PATH
-
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
