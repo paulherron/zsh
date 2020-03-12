@@ -1,0 +1,5 @@
+# Import Linux-specific overrides. (Allows the main .zshrc file to stay Mac-Linux agnostic.)
+LINUX_ZSHRC=~/.zsh/.zshrc.linux
+if [[ -f $LINUX_ZSHRC ]]; then
+	source $LINUX_ZSHRC
+fi
