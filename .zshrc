@@ -61,9 +61,6 @@ alias gk="gitk&"
 
 #alias gpga="eval $(gpg-agent --daemon)"
 
-# CakePHP aliases
-alias ccc="cake clear_cache"
-
 alias ll="ls -l"
 alias k="kubectl"
 alias kc="kubectx"
@@ -80,13 +77,6 @@ alias uuuu="cd ../../../.."
 
 alias P="pass show"
 alias Pe="pass edit"
-
-#alias -g L='| less'
-#alias -g G='| grep'
-#alias -g ..2='../..'
-#alias -g T="| tail"
-#alias -g J='| jsonlint -t "    "'
-#alias -g B='| browser'
 
 #kn="kubectl config set-context $(kubectl config current-context) --namespace"
 ke() {
