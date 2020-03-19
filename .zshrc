@@ -10,7 +10,6 @@ fi
 source ~/.profile
 source ~/.zsh/completion.zsh
 source ~/.zsh/termsupport.zsh
-source ~/.zsh/.aliases
 
 bindkey -e
 #bindkey -v
@@ -60,10 +59,9 @@ v() {
 	fi
 }
 
-#autoload -Uz vcs_info
-#zstyle ':vcs_info:*' enable git svn
-#function precmd () { vcs_info }
-#setopt prompt_subst
-#PS1="\$vcs_info_msg_0_$PS1"
+parse_git_branch() {
+	git symbolic-ref --short HEAD 2> /dev/null || echo "*"
+}
 
-PROMPT="$host_color%m%{$reset_color%}:%c %{$fg[green]%}%n%{$fg[blue]%} %T%{$reset_color%} $ "
+setopt prompt_subst
+PROMPT="$host_color%m%{$reset_color%}:%c %{$fg[green]%}%n%{$fg[blue]%} %T%{$reset_color%} \$(parse_git_branch) $ "
