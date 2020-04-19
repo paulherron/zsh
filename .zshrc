@@ -10,6 +10,7 @@ fi
 source ~/.profile
 source ~/.zsh/completion.zsh
 source ~/.zsh/termsupport.zsh
+source ~/.zsh/.aliases
 
 bindkey -e
 #bindkey -v
@@ -35,7 +36,7 @@ t() {
 }
 
 function ocr() {
-	convert $1 -resize 400% -type Grayscale /private/tmp/ocr_input.tif && tesseract -l eng /private/tmp/ocr_input.tif stdout
+	convert $1 -resize 400% -type Grayscale /tmp/ocr_input.tif && tesseract -l eng /tmp/ocr_input.tif stdout
 }
 
 function gx() {
@@ -57,6 +58,11 @@ v() {
 		# Pass everything else through to the `vagrant` command.
 		vagrant "$@"
 	fi
+}
+
+a() {
+	tr
+	autossh "$@"
 }
 
 parse_git_branch() {

@@ -38,6 +38,17 @@ alias s="git status"
 alias ss="git status -sb"
 alias gk="gitk&"
 
+# tmux red window title
+alias tr="tmux set-window-option window-status-style fg=red,bg=white && tmux set-window-option window-status-current-style fg=red,bg=#ffffbd"
+# tmux black window title
+alias tb="tmux set-window-option window-status-style fg=black,bg=white && tmux set-window-option window-status-current-style fg=black,bg=#ffffbd"
+# tmux black window title
+alias tg="tmux set-window-option window-status-style fg=green,bg=white && tmux set-window-option window-status-current-style fg=green,bg=#ffffbd"
+
+alias rs="rsnapshot -c ~/.rsnapshot/default.conf daily"
+
+alias pg="export PYTHONIOENCODING=utf-8; pirate-get"
+
 #alias gpga="eval $(gpg-agent --daemon)"
 
 alias ll="ls -l"
