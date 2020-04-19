@@ -114,6 +114,8 @@ alias .t="cd ~/Projects/capitalise/platfi-service-activity-timeline"
 alias .cr="cd ~/Projects/carlsonrezidor/site"
 alias .yo="cd ~/Projects/yoo/site"
 
+alias .com="cd ~/Downloads/complete"
+
 alias gfm="marked --gfm"
 alias page="lynx -dump -nolist -notitle -width 2000"
 
