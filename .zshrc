@@ -58,3 +58,9 @@ parse_git_branch() {
 
 setopt prompt_subst
 PROMPT="$host_color%m%{$reset_color%}:%c %{$fg[green]%}%n%{$fg[blue]%} %T%{$reset_color%} \$(parse_git_branch) $ "
+
+precmd () {
+	if [ -n "$TMUX" ]; then
+		tmux set-window-option -q window-status-current-format "${PWD##/*/}"
+	fi
+}
