@@ -7,6 +7,9 @@ if [[ -f $LOCAL_ZSHRC ]]; then
 	source $LOCAL_ZSHRC
 fi
 
+# Map (deactivated) caps lock to F19 (for Vim etc.)
+#xmodmap -e "keycode 66 = F19"
+
 source ~/.profile
 source ~/.zsh/completion.zsh
 source ~/.zsh/termsupport.zsh
@@ -57,10 +60,11 @@ parse_git_branch() {
 }
 
 setopt prompt_subst
-PROMPT="$host_color%m%{$reset_color%}:%c %{$fg[green]%}%n%{$fg[blue]%} %T%{$reset_color%} \$(parse_git_branch) $ "
+PROMPT='$host_color%m%{$reset_color%}:%c %{$fg[green]%}%n%{$fg[blue]%} %T%{$reset_color%} $(parse_git_branch) ${DOCKER_HOST#*@} $ '
 
 precmd () {
 	if [ -n "$TMUX" ]; then
-		tmux set-window-option -q window-status-current-format "${PWD##/*/}"
+		tmux set-window-option -q window-status-format "#I: ${PWD##/*/}"
+		tmux set-window-option -q window-status-current-format "#I: ${PWD##/*/}"
 	fi
 }
