@@ -7,8 +7,10 @@ if [[ -f $LOCAL_ZSHRC ]]; then
 	source $LOCAL_ZSHRC
 fi
 
-# Map (deactivated) caps lock to F19 (for Vim etc.)
-#xmodmap -e "keycode 66 = F19"
+# Map (deactivated) caps lock to F18 (for Vim etc.)
+# This used to be F19 but the IntelliJ Vim plugin wouldn't
+# pick up function keys that high
+xmodmap -e "keycode 66 = F8"
 
 source ~/.profile
 source ~/.zsh/completion.zsh
